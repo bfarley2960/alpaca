@@ -1,2 +1,2 @@
-alpaca-pyecho
+alpaca-py
 python-dotenv
