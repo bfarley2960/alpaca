@@ -1,0 +1,21 @@
+{
+  "positions": {
+    "SOFI": {
+      "entry_price": 18.46,
+      "last_known_price": 18.84,
+      "shares": 32.7297,
+      "floor": 16.614,
+      "ratchet_active": false,
+      "high_water_mark": 18.46,
+      "ladder_1_triggered": false,
+      "ladder_2_triggered": false
+    }
+  },
+  "performance": {
+    "starting_equity": 4844.15,
+    "peak_equity": 4904.48,
+    "floor_breach_count": 0,
+    "ladder_trigger_count": 0,
+    "ratchet_update_count": 0
+  }
+}

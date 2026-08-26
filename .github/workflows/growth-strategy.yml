@@ -1,0 +1,43 @@
+name: Growth Strategy
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch: {}
+
+concurrency:
+  group: growth-strategy
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  run-strategy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run growth strategy
+        working-directory: growth
+        env:
+          ALPACA_API_KEY: ${{ secrets.GROWTH_ALPACA_API_KEY }}
+          ALPACA_SECRET_KEY: ${{ secrets.GROWTH_ALPACA_SECRET_KEY }}
+        run: python multi_stock_strategy.py
+
+      - name: Commit updated state and log
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add growth/state.json growth/strategy_log.txt
+          git diff --staged --quiet || git commit -m "Update growth strategy state [skip ci]"
+          git push
