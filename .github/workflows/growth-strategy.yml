@@ -40,4 +40,5 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add growth/state.json growth/strategy_log.txt
           git diff --staged --quiet || git commit -m "Update growth strategy state [skip ci]"
+          git pull --rebase origin main
           git push
