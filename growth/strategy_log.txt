@@ -62,3 +62,12 @@
 [2026-08-27T23:26:25.930034+00:00] ONDS: skipping new entry -- cash reserve requirement ($1238.09) not met (cash=$1209.44).
 [2026-08-27T23:26:25.930043+00:00] PATH: skipping new entry -- cash reserve requirement ($1238.09) not met (cash=$1209.44).
 [2026-08-27T23:26:25.930056+00:00] PERFORMANCE: equity=$4952.35, total_return=+2.23%, drawdown_from_peak=-0.02%, floor_breaches=0, ladder_triggers=0, ratchet_updates=0
+[2026-08-27T23:31:21.165950+00:00] Check-in. Cash=$1209.44, Equity=$4947.61, Open positions: ['SOFI']
+[2026-08-27T23:31:21.366197+00:00] SOFI: one-sided or invalid quote (bid=18.42, ask=0.0). Falling back to latest trade price.
+[2026-08-27T23:31:21.422677+00:00] SOFI: price=$19.17, entry=$18.46, change=+3.85%, floor=$16.61, ratchet_active=False
+[2026-08-27T23:31:21.422922+00:00] NOK: skipping new entry -- cash reserve requirement ($1236.90) not met (cash=$1209.44).
+[2026-08-27T23:31:21.422952+00:00] RIVN: skipping new entry -- cash reserve requirement ($1236.90) not met (cash=$1209.44).
+[2026-08-27T23:31:21.422973+00:00] SOUN: skipping new entry -- cash reserve requirement ($1236.90) not met (cash=$1209.44).
+[2026-08-27T23:31:21.422992+00:00] ONDS: skipping new entry -- cash reserve requirement ($1236.90) not met (cash=$1209.44).
+[2026-08-27T23:31:21.423011+00:00] PATH: skipping new entry -- cash reserve requirement ($1236.90) not met (cash=$1209.44).
+[2026-08-27T23:31:21.423032+00:00] PERFORMANCE: equity=$4947.61, total_return=+2.14%, drawdown_from_peak=-0.12%, floor_breaches=0, ladder_triggers=0, ratchet_updates=0
