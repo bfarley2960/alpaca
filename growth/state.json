@@ -2,7 +2,7 @@
   "positions": {
     "SOFI": {
       "entry_price": 18.46,
-      "last_known_price": 18.84,
+      "last_known_price": 18.955,
       "shares": 32.7297,
       "floor": 16.614,
       "ratchet_active": false,
