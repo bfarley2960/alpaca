@@ -798,3 +798,11 @@
 [2026-08-28T19:09:57.511072+00:00] ONDS: skipping new entry -- position cost ($596.04) exceeds cash available after reserve ($17.36).
 [2026-08-28T19:09:57.582693+00:00] PATH: skipping new entry -- position cost ($596.04) exceeds cash available after reserve ($17.36).
 [2026-08-28T19:09:57.582814+00:00] PERFORMANCE: equity=$4768.32, total_return=-1.57%, drawdown_from_peak=-3.96%, floor_breaches=0, ladder_triggers=0, ratchet_updates=0
+[2026-08-28T19:16:24.437162+00:00] Check-in. Cash=$1209.44, Equity=$4763.33, Open positions: ['SOFI']
+[2026-08-28T19:16:24.957557+00:00] SOFI: price=$18.11, entry=$18.46, change=-1.92%, floor=$16.61, ratchet_active=False
+[2026-08-28T19:16:25.027214+00:00] NOK: skipping new entry -- position cost ($595.42) exceeds cash available after reserve ($18.61).
+[2026-08-28T19:16:25.100752+00:00] RIVN: skipping new entry -- position cost ($595.42) exceeds cash available after reserve ($18.61).
+[2026-08-28T19:16:25.178089+00:00] SOUN: skipping new entry -- position cost ($595.42) exceeds cash available after reserve ($18.61).
+[2026-08-28T19:16:25.247322+00:00] ONDS: skipping new entry -- position cost ($595.42) exceeds cash available after reserve ($18.61).
+[2026-08-28T19:16:25.319560+00:00] PATH: skipping new entry -- position cost ($595.42) exceeds cash available after reserve ($18.61).
+[2026-08-28T19:16:25.319723+00:00] PERFORMANCE: equity=$4763.33, total_return=-1.67%, drawdown_from_peak=-4.06%, floor_breaches=0, ladder_triggers=0, ratchet_updates=0
