@@ -13,7 +13,7 @@
   },
   "performance": {
     "starting_equity": 4844.15,
-    "peak_equity": 4961.55,
+    "peak_equity": 4961.77,
     "floor_breach_count": 0,
     "ladder_trigger_count": 0,
     "ratchet_update_count": 0
