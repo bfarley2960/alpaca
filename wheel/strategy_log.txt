@@ -357,3 +357,5 @@
 [2026-08-29T16:00:26.721202+00:00] WARNING: position lookup for TSLA260904P00317500 returned nothing, but its expiration (2026-09-04) hasn't passed yet (today is 2026-08-29). This is likely a transient API issue, NOT a real expiration. Taking no action -- will re-check next run.
 [2026-08-29T16:15:25.587860+00:00] Check-in. Stage: selling_puts. Cumulative premium collected: $675.00
 [2026-08-29T16:15:25.902764+00:00] WARNING: position lookup for TSLA260904P00317500 returned nothing, but its expiration (2026-09-04) hasn't passed yet (today is 2026-08-29). This is likely a transient API issue, NOT a real expiration. Taking no action -- will re-check next run.
+[2026-08-29T16:30:28.947491+00:00] Check-in. Stage: selling_puts. Cumulative premium collected: $675.00
+[2026-08-29T16:30:29.215689+00:00] WARNING: position lookup for TSLA260904P00317500 returned nothing, but its expiration (2026-09-04) hasn't passed yet (today is 2026-08-29). This is likely a transient API issue, NOT a real expiration. Taking no action -- will re-check next run.
