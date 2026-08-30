@@ -100,6 +100,31 @@ def log(message: str):
         f.write(line + "\n")
 
 
+def notify(subject: str, body: str):
+    """Sends an email alert for a real, meaningful event -- NOT called on
+    routine 'still holding' check-ins, only on actual trades, floor
+    breaches, ratchet updates, and errors worth knowing about right away.
+    Silently does nothing if email isn't configured."""
+    sender = os.environ.get("EMAIL_ADDRESS")
+    app_password = os.environ.get("EMAIL_APP_PASSWORD")
+    recipient = os.environ.get("NOTIFY_TO_EMAIL", sender)
+    if not sender or not app_password:
+        return
+    import smtplib
+    from email.mime.text import MIMEText
+    msg = MIMEText(body)
+    msg["Subject"] = f"[Growth Strategy] {subject}"
+    msg["From"] = sender
+    msg["To"] = recipient
+    try:
+        with smtplib.SMTP("smtp.gmail.com", 587, timeout=15) as server:
+            server.starttls()
+            server.login(sender, app_password)
+            server.sendmail(sender, [recipient], msg.as_string())
+    except Exception as e:
+        log(f"Email notification failed to send: {e}")
+
+
 def load_state() -> dict:
     if STATE_FILE.exists():
         with open(STATE_FILE, "r") as f:
@@ -291,6 +316,9 @@ def try_open_new_position(symbol: str, state: dict, cash: float, equity: float):
     actual_price = fill_price or price
     log(f"OPENED NEW POSITION: {symbol} -- {shares} shares @ ~${actual_price:.2f} "
         f"(cost ~${cost:.2f}, risking ~${equity * RISK_PER_TRADE_PCT:.2f} at the floor)")
+    notify(f"Opened new position: {symbol}",
+           f"Bought {shares} shares of {symbol} @ ~${actual_price:.2f} "
+           f"(cost ~${cost:.2f}).")
 
     state["positions"][symbol] = {
         "entry_price": actual_price,
@@ -351,6 +379,10 @@ def manage_existing_position(symbol: str, state: dict, cash: float):
             filled, fill_price = place_and_verify_market_order(symbol, OrderSide.SELL, shares)
             if filled:
                 log(f"{symbol}: SELL CONFIRMED FILLED @ ~${fill_price:.2f}. Position closed.")
+                pnl = (fill_price - pos["entry_price"]) * shares
+                notify(f"Floor breach - sold {symbol}",
+                       f"Sold {shares} shares of {symbol} @ ~${fill_price:.2f} "
+                       f"(entry was ${pos['entry_price']:.2f}). Approx P/L: ${pnl:.2f}.")
                 state["performance"]["floor_breach_count"] += 1
                 del state["positions"][symbol]
                 save_state(state)
@@ -464,5 +496,9 @@ if __name__ == "__main__":
         log(f"UNEXPECTED ERROR this run: {type(e).__name__}: {e}. "
             f"This run is aborting, but the loop will retry automatically "
             f"in ~15 minutes. No state was corrupted by this error.")
+        notify("Unexpected error - worth a look",
+               f"{type(e).__name__}: {e}\n\n"
+               f"This run aborted, but the next scheduled run will retry "
+               f"automatically. No state was corrupted.")
     finally:
         release_lock()
