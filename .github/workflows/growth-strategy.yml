@@ -32,6 +32,9 @@ jobs:
         env:
           ALPACA_API_KEY: ${{ secrets.GROWTH_ALPACA_API_KEY }}
           ALPACA_SECRET_KEY: ${{ secrets.GROWTH_ALPACA_SECRET_KEY }}
+          EMAIL_ADDRESS: ${{ secrets.EMAIL_ADDRESS }}
+          EMAIL_APP_PASSWORD: ${{ secrets.EMAIL_APP_PASSWORD }}
+          NOTIFY_TO_EMAIL: ${{ secrets.NOTIFY_TO_EMAIL }}
         run: python multi_stock_strategy.py
         
       - name: Commit updated state and log
