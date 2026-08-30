@@ -33,7 +33,7 @@ jobs:
           ALPACA_API_KEY: ${{ secrets.GROWTH_ALPACA_API_KEY }}
           ALPACA_SECRET_KEY: ${{ secrets.GROWTH_ALPACA_SECRET_KEY }}
         run: python multi_stock_strategy.py
-
+        
       - name: Commit updated state and log
         run: |
           git config user.name "github-actions[bot]"
