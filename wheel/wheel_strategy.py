@@ -106,6 +106,31 @@ def log(message: str):
         f.write(line + "\n")
 
 
+def notify(subject: str, body: str):
+    """Sends an email alert for a real, meaningful event -- NOT called on
+    routine 'still open, holding' check-ins, only on actual trades, fills,
+    and things worth knowing about right away. Silently does nothing if
+    email isn't configured (so this never breaks the script)."""
+    sender = os.environ.get("EMAIL_ADDRESS")
+    app_password = os.environ.get("EMAIL_APP_PASSWORD")
+    recipient = os.environ.get("NOTIFY_TO_EMAIL", sender)
+    if not sender or not app_password:
+        return
+    import smtplib
+    from email.mime.text import MIMEText
+    msg = MIMEText(body)
+    msg["Subject"] = f"[Wheel Strategy] {subject}"
+    msg["From"] = sender
+    msg["To"] = recipient
+    try:
+        with smtplib.SMTP("smtp.gmail.com", 587, timeout=15) as server:
+            server.starttls()
+            server.login(sender, app_password)
+            server.sendmail(sender, [recipient], msg.as_string())
+    except Exception as e:
+        log(f"Email notification failed to send: {e}")
+
+
 def load_state() -> dict:
     if STATE_FILE.exists():
         with open(STATE_FILE, "r") as f:
@@ -269,6 +294,9 @@ def run_strategy():
                 state["premium_collected_this_contract"] = filled_price * 100
                 log(f"CONFIRMED FILLED (open): {state['active_contract_symbol']} "
                     f"premium=${filled_price * 100:.2f}")
+                notify("New put sold",
+                       f"Sold {state['active_contract_symbol']} for "
+                       f"${filled_price * 100:.2f} premium.")
             elif state["pending_order_type"] == "close":
                 premium_sold_for = state["premium_collected_this_contract"]
                 cost_to_close = filled_price * 100
@@ -276,6 +304,9 @@ def run_strategy():
                 state["cumulative_premium"] += realized
                 log(f"CONFIRMED FILLED (close): bought back for ${cost_to_close:.2f}. "
                     f"Realized ${realized:.2f}. Cumulative: ${state['cumulative_premium']:.2f}")
+                notify("Position closed",
+                       f"Bought back for ${cost_to_close:.2f}. Realized ${realized:.2f} "
+                       f"this cycle. Cumulative premium: ${state['cumulative_premium']:.2f}.")
                 state["active_contract_symbol"] = None
             # Clear pending fields either way
             state["pending_order_id"] = None
@@ -342,6 +373,9 @@ def run_strategy():
                 log(f"Contract {contract_symbol} expired worthless (confirmed: "
                     f"expiration {expiration_date} has passed). "
                     f"Premium kept: ${premium:.2f}. Cumulative: ${state['cumulative_premium']:.2f}")
+                notify("Contract expired worthless",
+                       f"{contract_symbol} expired worthless. Kept ${premium:.2f} premium. "
+                       f"Cumulative: ${state['cumulative_premium']:.2f}.")
                 state["active_contract_symbol"] = None
                 save_state(state)
             else:
@@ -349,6 +383,10 @@ def run_strategy():
                     f"but its expiration ({expiration_date}) hasn't passed yet "
                     f"(today is {today}). This is likely a transient API issue, NOT a "
                     f"real expiration. Taking no action -- will re-check next run.")
+                notify("Anomaly detected (needs a look)",
+                       f"{contract_symbol} position unexpectedly not found, but it "
+                       f"hasn't expired yet. Likely a transient API glitch -- taking no "
+                       f"action, but worth a quick check.")
             return
         else:
             quote = get_option_quote(contract_symbol)
@@ -425,4 +463,13 @@ def run_strategy():
 
 
 if __name__ == "__main__":
-    run_strategy()
+    try:
+        run_strategy()
+    except Exception as e:
+        log(f"UNEXPECTED ERROR this run: {type(e).__name__}: {e}. "
+            f"This run is aborting, but the next scheduled run will retry "
+            f"automatically. No state was corrupted by this error.")
+        notify("Unexpected error - worth a look",
+               f"{type(e).__name__}: {e}\n\n"
+               f"This run aborted, but the next scheduled run will retry "
+               f"automatically. No state was corrupted.")
