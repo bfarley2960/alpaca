@@ -6,8 +6,8 @@
   "premium_collected_this_contract": 83.0,
   "cumulative_premium": 718.0,
   "cost_basis": null,
-  "pending_order_id": null,
-  "pending_order_type": null,
+  "pending_order_id": "1538dbd2-e497-4837-979f-997735db9136",
+  "pending_order_type": "close",
   "pending_contract_symbol": null,
   "pending_contract_strike": null,
   "pending_contract_expiration": null
