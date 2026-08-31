@@ -3374,3 +3374,15 @@
 [2026-08-31T22:01:21.110887+00:00] PATH: one-sided or invalid quote (bid=17.53, ask=0.0). Falling back to latest trade price.
 [2026-08-31T22:01:21.179066+00:00] PATH: skipping new entry -- position cost ($593.40) exceeds cash available after reserve ($22.65).
 [2026-08-31T22:01:21.179123+00:00] PERFORMANCE: equity=$4747.16, total_return=-2.00%, drawdown_from_peak=-4.39%, floor_breaches=0, ladder_triggers=0, ratchet_updates=0
+[2026-08-31T22:16:25.396378+00:00] Check-in. Cash=$1209.44, Equity=$4746.46, Open positions: ['SOFI']
+[2026-08-31T22:16:25.606894+00:00] SOFI: one-sided or invalid quote (bid=17.85, ask=0.0). Falling back to latest trade price.
+[2026-08-31T22:16:25.674624+00:00] SOFI: price=$17.88, entry=$18.46, change=-3.14%, floor=$16.61, ratchet_active=False
+[2026-08-31T22:16:25.731153+00:00] NOK: skipping new entry -- position cost ($593.31) exceeds cash available after reserve ($22.83).
+[2026-08-31T22:16:25.800950+00:00] RIVN: one-sided or invalid quote (bid=15.41, ask=0.0). Falling back to latest trade price.
+[2026-08-31T22:16:25.862347+00:00] RIVN: skipping new entry -- position cost ($593.31) exceeds cash available after reserve ($22.83).
+[2026-08-31T22:16:25.917975+00:00] SOUN: skipping new entry -- position cost ($593.31) exceeds cash available after reserve ($22.83).
+[2026-08-31T22:16:25.978638+00:00] ONDS: one-sided or invalid quote (bid=6.61, ask=0.0). Falling back to latest trade price.
+[2026-08-31T22:16:26.052426+00:00] ONDS: skipping new entry -- position cost ($593.31) exceeds cash available after reserve ($22.83).
+[2026-08-31T22:16:26.109239+00:00] PATH: one-sided or invalid quote (bid=17.53, ask=0.0). Falling back to latest trade price.
+[2026-08-31T22:16:26.164445+00:00] PATH: skipping new entry -- position cost ($593.31) exceeds cash available after reserve ($22.83).
+[2026-08-31T22:16:26.164558+00:00] PERFORMANCE: equity=$4746.46, total_return=-2.02%, drawdown_from_peak=-4.40%, floor_breaches=0, ladder_triggers=0, ratchet_updates=0
