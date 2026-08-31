@@ -815,3 +815,7 @@
 [2026-08-31T19:45:25.580630+00:00] Check-in. Stage: selling_puts. Cumulative premium collected: $763.00
 [2026-08-31T19:45:25.798441+00:00] Pending order d8178f2e-d969-4ed2-bf32-434b4b7618fd status: new
 [2026-08-31T19:45:25.798548+00:00] Order still pending (new). Waiting for next check-in before taking any further action.
+[2026-08-31T20:00:29.638631+00:00] Check-in. Stage: selling_puts. Cumulative premium collected: $763.00
+[2026-08-31T20:00:29.680116+00:00] Pending order d8178f2e-d969-4ed2-bf32-434b4b7618fd status: expired
+[2026-08-31T20:00:29.680173+00:00] Pending order was expired (never filled). Clearing pending state, will retry next check-in.
+[2026-08-31T20:00:29.971177+00:00] SUBMITTED SELL PUT (pending fill confirmation): TSLA260911P00327500 strike=$327.5 exp=2026-09-11 order_id=ae8f822c-bf11-4d68-8cee-820cb5628ced

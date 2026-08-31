@@ -6,9 +6,9 @@
   "premium_collected_this_contract": 83.0,
   "cumulative_premium": 763.0,
   "cost_basis": null,
-  "pending_order_id": "d8178f2e-d969-4ed2-bf32-434b4b7618fd",
+  "pending_order_id": "ae8f822c-bf11-4d68-8cee-820cb5628ced",
   "pending_order_type": "open",
-  "pending_contract_symbol": "TSLA260914P00325000",
-  "pending_contract_strike": 325.0,
-  "pending_contract_expiration": "2026-09-14"
+  "pending_contract_symbol": "TSLA260911P00327500",
+  "pending_contract_strike": 327.5,
+  "pending_contract_expiration": "2026-09-11"
 }
