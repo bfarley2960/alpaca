@@ -751,3 +751,7 @@
 [2026-08-31T14:30:30.293288+00:00] Contract TSLA260909P00320000 still open. Sold for $83.00, currently worth $45.00. Holding.
 [2026-08-31T14:45:27.214547+00:00] Check-in. Stage: selling_puts. Cumulative premium collected: $718.00
 [2026-08-31T14:45:27.468370+00:00] PROFIT TARGET HIT on TSLA260909P00320000: sold for $83.00, now worth $40.00. Submitting buy-to-close order.
+[2026-08-31T15:00:31.800776+00:00] Check-in. Stage: selling_puts. Cumulative premium collected: $718.00
+[2026-08-31T15:00:32.015358+00:00] Pending order 1538dbd2-e497-4837-979f-997735db9136 status: filled
+[2026-08-31T15:00:32.015477+00:00] CONFIRMED FILLED (close): bought back for $38.00. Realized $45.00. Cumulative: $763.00
+[2026-08-31T15:00:38.302421+00:00] SUBMITTED SELL PUT (pending fill confirmation): TSLA260914P00325000 strike=$325.0 exp=2026-09-14 order_id=d8178f2e-d969-4ed2-bf32-434b4b7618fd
