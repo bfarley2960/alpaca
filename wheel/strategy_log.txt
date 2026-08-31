@@ -755,3 +755,6 @@
 [2026-08-31T15:00:32.015358+00:00] Pending order 1538dbd2-e497-4837-979f-997735db9136 status: filled
 [2026-08-31T15:00:32.015477+00:00] CONFIRMED FILLED (close): bought back for $38.00. Realized $45.00. Cumulative: $763.00
 [2026-08-31T15:00:38.302421+00:00] SUBMITTED SELL PUT (pending fill confirmation): TSLA260914P00325000 strike=$325.0 exp=2026-09-14 order_id=d8178f2e-d969-4ed2-bf32-434b4b7618fd
+[2026-08-31T15:15:25.470642+00:00] Check-in. Stage: selling_puts. Cumulative premium collected: $763.00
+[2026-08-31T15:15:25.887520+00:00] Pending order d8178f2e-d969-4ed2-bf32-434b4b7618fd status: new
+[2026-08-31T15:15:25.887637+00:00] Order still pending (new). Waiting for next check-in before taking any further action.
