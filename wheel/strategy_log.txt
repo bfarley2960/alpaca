@@ -1510,3 +1510,6 @@
 [2026-09-03T20:45:25.144641+00:00] Check-in. Stage: selling_puts. Cumulative premium collected: $817.00
 [2026-09-03T20:45:25.208771+00:00] UNEXPECTED ERROR this run: APIError: {"message": "unauthorized."}
 . This run is aborting, but the next scheduled run will retry automatically. No state was corrupted by this error.
+[2026-09-03T21:00:39.491969+00:00] Check-in. Stage: selling_puts. Cumulative premium collected: $817.00
+[2026-09-03T21:00:39.766715+00:00] UNEXPECTED ERROR this run: APIError: {"message": "unauthorized."}
+. This run is aborting, but the next scheduled run will retry automatically. No state was corrupted by this error.
