@@ -1,14 +1,14 @@
 {
   "stage": "selling_puts",
-  "active_contract_symbol": "TSLA260911P00327500",
+  "active_contract_symbol": null,
   "active_contract_strike": 327.5,
   "active_contract_expiration": "2026-09-11",
   "premium_collected_this_contract": 102.0,
-  "cumulative_premium": 763.0,
+  "cumulative_premium": 817.0,
   "cost_basis": null,
-  "pending_order_id": "ac8f60da-f884-4892-b49f-f8a7b9e9a0b2",
-  "pending_order_type": "close",
-  "pending_contract_symbol": null,
-  "pending_contract_strike": 327.5,
-  "pending_contract_expiration": "2026-09-11"
+  "pending_order_id": "ab5c3cb3-69a0-4363-bc7a-2373523848b6",
+  "pending_order_type": "open",
+  "pending_contract_symbol": "TSLA260918P00337500",
+  "pending_contract_strike": 337.5,
+  "pending_contract_expiration": "2026-09-18"
 }
