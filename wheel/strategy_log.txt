@@ -1501,3 +1501,6 @@
 [2026-09-03T19:45:29.707533+00:00] Contract TSLA260918P00337500 still open. Sold for $255.00, currently worth $180.00. Holding.
 [2026-09-03T20:00:35.419420+00:00] Check-in. Stage: selling_puts. Cumulative premium collected: $817.00
 [2026-09-03T20:00:35.691951+00:00] Contract TSLA260918P00337500 still open. Sold for $255.00, currently worth $196.00. Holding.
+[2026-09-03T20:15:30.106701+00:00] Check-in. Stage: selling_puts. Cumulative premium collected: $817.00
+[2026-09-03T20:15:30.157761+00:00] UNEXPECTED ERROR this run: APIError: {"message": "unauthorized."}
+. This run is aborting, but the next scheduled run will retry automatically. No state was corrupted by this error.
