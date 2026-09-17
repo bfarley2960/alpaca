@@ -4350,3 +4350,7 @@
 [2026-09-17T14:45:26.452577+00:00] Check-in. Stage: selling_puts. Cumulative premium collected: $1068.00
 [2026-09-17T14:45:26.649665+00:00] Pending order 486dd5fd-f47a-434c-a6c6-3629d8815172 status: new
 [2026-09-17T14:45:26.649769+00:00] Order still pending (new). Waiting for next check-in before taking any further action.
+[2026-09-17T15:00:38.849523+00:00] Check-in. Stage: selling_puts. Cumulative premium collected: $1068.00
+[2026-09-17T15:00:39.020914+00:00] Pending order 486dd5fd-f47a-434c-a6c6-3629d8815172 status: filled
+[2026-09-17T15:00:39.020975+00:00] CONFIRMED FILLED (open): TSLA260930P00330000 premium=$107.00
+[2026-09-17T15:00:41.929945+00:00] Contract TSLA260930P00330000 still open. Sold for $107.00, currently worth $125.00. Holding.
